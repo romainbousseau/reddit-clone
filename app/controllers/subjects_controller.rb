@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :update, :edit, :create]
+  skip_before_action :authenticate_user!, only: :index
+
   def new
     @subject = Subject.new
   end

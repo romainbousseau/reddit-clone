@@ -7,10 +7,10 @@
   <div class="navbar-right">
     <div class="navbar-links">
       <% if user_signed_in? %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn-navbar" %>
       <% else %>
-        <%= link_to "Sign in", new_user_session_path  %>
-        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn-navbar"  %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
       <% end %>
     </div>
   </div>

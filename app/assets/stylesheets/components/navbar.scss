@@ -13,15 +13,12 @@
 
 .navbar-right {
   float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
   margin: 0px 50px;
 }
 
-.navbar-links {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  a {
-    padding-right: 10px;
-  }
-}
+.navbar-links a {
 
+}

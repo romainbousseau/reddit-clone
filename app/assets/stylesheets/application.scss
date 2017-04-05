@@ -14,11 +14,21 @@
  *= require_self
  */
 
+// Bootstrap variables
+@import "variables";
+@import "bootstrap_variables";
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+
 // My CSS
 @import "components/navbar";
 @import "components/flashes";
+@import "components/buttons";
+
+body {
+  color: #2F9296;
+}

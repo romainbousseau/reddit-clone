@@ -25,8 +25,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha3'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'bootstrap-sass'
+
+# Font Awesome
+gem 'font-awesome-sass'
+
+# Simple Form
+gem "simple_form"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,6 +53,9 @@ group :development, :test do
 end
 
 group :development do
+  # Better errors
+  gem 'better_errors'
+  gem 'binding_of_caller'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'

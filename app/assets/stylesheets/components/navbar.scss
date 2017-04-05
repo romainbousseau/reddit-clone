@@ -1,0 +1,18 @@
+.navbar {
+  height: 80px;
+  background-color: #46B7B9;
+}
+
+.navbar-right {
+  float: right;
+  margin: 0px 50px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    padding-right: 10px;
+  }
+}

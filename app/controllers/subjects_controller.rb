@@ -27,6 +27,8 @@ class SubjectsController < ApplicationController
   end
 
   def update
+    @subject.update(subject_params)
+    redirect_to subjects_path
   end
 
   private
@@ -36,6 +38,6 @@ class SubjectsController < ApplicationController
   end
 
   def set_subject
-    @user = Subject.find(params[:id])
+    @subject = Subject.find(params[:id])
   end
 end

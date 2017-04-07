@@ -1,5 +1,16 @@
 <div class="container">
-  <h1><%= @subject.title %></h1>
-  <p><%= @subject.content %></p>
+  <div class="subject-show">
+    <div class="subject-header">
+      <h4><%= @subject.title %></h4>
+      <% if user_signed_in? && @subject.user_id == current_user.id %>
+        <%= link_to edit_subject_path(@subject) do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="subject-body">
+      <p><%= @subject.content %></p>
+    </div>
+  </div>
   <%= link_to "Back", subjects_path, class: 'button' %>
 </div>

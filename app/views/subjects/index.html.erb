@@ -2,12 +2,19 @@
   <h1>List of subjects</h1>
 
   <% @subjects.each do |subject| %>
-    <div class="subject">
-      <p><%= subject.title %></p>
-      <p><%= subject.content %></p>
-      <%= link_to edit_subject_path(subject) do %>
-        <i class="fa fa-pencil"></i>
-      <% end %>
-    </div>
+    <ul>
+      <li>
+        <div class="subject">
+          <%= link_to subject_path(subject) do %>
+            <p><%= subject.title %></p>
+          <% end %>
+          <p><%= subject.content %></p>
+          <p><%= subject.user.username %></p>
+          <%= link_to edit_subject_path(subject) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+        </div>
+      </li>
+    </ul>
   <% end %>
 </div>

@@ -12,3 +12,17 @@
     text-decoration: none;
   }
 }
+
+.button {
+  color: #46B7B9;
+  border: 1px solid #46B7B9;
+  border-radius: 4px;
+  padding: 5px 5px;
+  transition: all 0.3s ease;
+  &:hover{
+    background-color: #46B7B9;
+    border: 1px solid #46B7B9;
+    color: #fcfcfc;
+    text-decoration: none;
+  }
+}

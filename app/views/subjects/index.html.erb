@@ -1,13 +1,13 @@
 <div class="container">
   <h1>List of subjects</h1>
 
-  <div class="subject">
-      <% @subjects.each do |subject| %>
-        <p><%= subject.title %></p>
-        <p><%= subject.content %></p>
-        <%= link_to edit_subject_path(subject) do %>
-          <i class="fa fa-pencil"></i>
-        <% end %>
+  <% @subjects.each do |subject| %>
+    <div class="subject">
+      <p><%= subject.title %></p>
+      <p><%= subject.content %></p>
+      <%= link_to edit_subject_path(subject) do %>
+        <i class="fa fa-pencil"></i>
       <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

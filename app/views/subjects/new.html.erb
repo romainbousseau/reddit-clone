@@ -1,8 +1,11 @@
-<% simple_form_for [@subject, current_user] do |f|  %>
-  <%= f.error_notification %>
+<div class="container">
+<h1>What's on your mind ?</h1>
+  <%= simple_form_for [@subject] do |f|  %>
+    <%= f.error_notification %>
 
-  <%= f.input :title, label: "Title" %>
-  <%= f.input :content, label: "Content" %>
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :content, label: "Content" %>
 
-  <%= f.button :submit %>
-<% end %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

@@ -19,6 +19,9 @@
   margin: 0px 50px;
 }
 
-.navbar-links a {
-
+.navbar-link {
+  padding-right: 10px;
+  &:hover {
+    text-decoration: none;
+  }
 }

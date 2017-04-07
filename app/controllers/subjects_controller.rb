@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :update, :edit, :create]
+  before_action :set_subject, only: [:show, :update, :edit]
   skip_before_action :authenticate_user!, only: :index
 
   def new
@@ -15,6 +15,12 @@ class SubjectsController < ApplicationController
 
   def create
     @subject = Subject.new(subject_params)
+    @subject.user = current_user
+    if @subject.save
+      redirect_to subjects_path
+    else
+      redirect_to new_subject_path
+    end
   end
 
   def edit

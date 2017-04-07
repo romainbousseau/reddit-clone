@@ -1,6 +1,8 @@
-<h3>List of subjects</h3>
+<div class="container">
+  <h1>List of subjects</h1>
 
-<% @subjects.each do |subject| %>
-  <p><%= subject.title %></p>
-  <p><%= subject.content %></p>
-<% end %>
+  <% @subjects.each do |subject| %>
+    <p><%= subject.title %></p>
+    <p><%= subject.content %></p>
+  <% end %>
+</div>

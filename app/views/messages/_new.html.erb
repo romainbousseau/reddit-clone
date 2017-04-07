@@ -1,0 +1,6 @@
+<%= simple_form_for [@subject, @message] do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :content, label: 'Content' %>
+  <%= f.button :submit %>
+<% end %>

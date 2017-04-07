@@ -12,5 +12,8 @@
       <p><%= @subject.content %></p>
     </div>
   </div>
+  <div class="add-message">
+    <%= render 'messages/new', subject: @subject, message: @message %>
+  </div>
   <%= link_to "Back", subjects_path, class: 'button' %>
 </div>

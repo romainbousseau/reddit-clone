@@ -5,14 +5,24 @@
     <ul>
       <li>
         <div class="subject">
-          <%= link_to subject_path(subject) do %>
-            <p><%= subject.title %></p>
-          <% end %>
-          <p><%= subject.content %></p>
-          <p><%= subject.user.username %></p>
-          <%= link_to edit_subject_path(subject) do %>
-            <i class="fa fa-pencil"></i>
-          <% end %>
+          <div class="subject-header">
+            <div class="subject-title">
+              <%= link_to subject_path(subject) do %>
+                <h4><%= subject.title %></h4>
+              <% end %>
+              <% if subject.user_id == current_user.id %>
+                <%= link_to edit_subject_path(subject) do %>
+                  <i class="fa fa-pencil"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="subject-author">
+              <p>Started by <%= subject.user.username %></p>
+            </div>
+          </div>
+          <div class="subject-body">
+            <p><%= subject.content.truncate(50) %></p>
+          </div>
         </div>
       </li>
     </ul>

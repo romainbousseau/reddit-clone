@@ -1,3 +1,41 @@
+.subject {
+  border: 1px solid #46B7B9;
+}
+
+.subject-header {
+  background-color: #46B7B9;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h4 {
+    color: #fcfcfc;
+    margin: 0px 0px;
+    padding-right: 10px;
+    display: inline-block;
+    transition: text-shadow 0.5s ease;
+    &:hover {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+  }
+  i {
+    color: #fcfcfc;
+    display: inline-block;
+    transition: text-shadow 0.5s ease;
+    &:hover {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+  }
+}
+
+.subject-body {
+  background-color: #fcfcfc;
+  padding: 10px 20px;
+  p {
+    margin: 0px;
+  }
+}
+
 .subject a {
   &:hover{
     text-decoration: none;

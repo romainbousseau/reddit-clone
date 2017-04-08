@@ -10,10 +10,20 @@
     </div>
     <div class="subject-body">
       <p><%= @subject.content %></p>
+      <% if @messages %>
+        <% @messages.each do |m| %>
+          <div class="message">
+            <%= m.content %>
+            <%= m.user.username %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="add-message">
     <%= render 'messages/new', subject: @subject, message: @message %>
   </div>
-  <%= link_to "Back", subjects_path, class: 'button' %>
+  <div class="nav-buttons">
+    <%= link_to "Back", subjects_path, class: 'button' %>
+  </div>
 </div>

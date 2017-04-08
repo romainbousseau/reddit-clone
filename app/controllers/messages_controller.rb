@@ -10,6 +10,9 @@ class MessagesController < ApplicationController
     @message.user = current_user
     @message.subject = @subject
     @message.save
+    if @message.save
+      redirect_to subject_path(@subject)
+    end
   end
 
   def show

@@ -12,6 +12,7 @@ class SubjectsController < ApplicationController
 
   def show
     @message = Message.new
+    @messages = Message.where(subject_id: @subject)
   end
 
   def create

@@ -25,6 +25,9 @@
                 <%= link_to edit_subject_message_path(@subject,m) do %>
                   <i style="display: inline-block;" class="fa fa-pencil"></i>
                 <% end %>
+                <%= link_to subject_message_path(@subject, m), method: :delete do %>
+                  <i style="display: inline-block;" class="fa fa-trash"></i>
+                <% end %>
               <% end %>
             </div>
           </div>

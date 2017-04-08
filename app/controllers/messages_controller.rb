@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :set_subject, only: [:new, :create, :edit, :update, :show]
+  before_action :set_subject, only: [:new, :create, :edit, :update, :show, :destroy]
   def new
     @message = Message.new
   end
@@ -27,6 +27,8 @@ class MessagesController < ApplicationController
   end
 
   def destroy
+    @message.destroy
+    redirect_to subject_path(@subject)
   end
 
   private

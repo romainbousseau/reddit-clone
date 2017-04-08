@@ -7,14 +7,17 @@
           <i class="fa fa-pencil"></i>
         <% end %>
       <% end %>
+      <div class="subject-author">
+        <p>Started by <%= @subject.user.username %></p>
+      </div>
     </div>
     <div class="subject-body">
       <p><%= @subject.content %></p>
       <% if @messages %>
         <% @messages.each do |m| %>
           <div class="message">
-            <%= m.content %>
-            <%= m.user.username %>
+            <p><%= m.content %></p>
+            <p><%= m.user.username %></p>
           </div>
         <% end %>
       <% end %>

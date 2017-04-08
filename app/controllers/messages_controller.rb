@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+    before_action :set_subject, only: [:new, :create, :edit, :update, :show]
   def new
     @message = Message.new
   end
@@ -7,6 +8,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @message.user = current_user
+    @message.subject = @subject
     @message.save
   end
 
@@ -29,5 +31,9 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:content, :subject_id, :user_id)
+  end
+
+    def set_subject
+    @subject = Subject.find(params[:subject_id])
   end
 end

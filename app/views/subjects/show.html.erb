@@ -1,12 +1,14 @@
 <div class="container">
   <div class="subject-show">
     <div class="subject-header">
-      <h4><%= @subject.title %></h4>
-      <% if user_signed_in? && @subject.user_id == current_user.id %>
-        <%= link_to edit_subject_path(@subject) do %>
-          <i class="fa fa-pencil"></i>
+      <div class="subject-title">
+        <h4><%= @subject.title %></h4>
+        <% if user_signed_in? && @subject.user_id == current_user.id %>
+          <%= link_to edit_subject_path(@subject) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
       <div class="subject-author">
         <p>Started by <%= @subject.user.username %></p>
       </div>
@@ -16,6 +18,11 @@
       <% if @messages %>
         <% @messages.each do |m| %>
           <div class="message">
+            <% if m.user_id == current_user.id %>
+              <%= link_to edit_subject_message_path(m) do %>
+                <i class="fa fa-pencil"></i>
+              <% end %>
+            <% end %>
             <p><%= m.content %></p>
             <p><%= m.user.username %></p>
           </div>

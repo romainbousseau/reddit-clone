@@ -18,7 +18,7 @@
       <p><%= @subject.content %></p>
       <%= simple_form_for @subject.upvotes.build, url: subject_upvotes_path(@subject), remote: true do |f| %>
         <%= f.hidden_field :user, value: current_user %>
-        <%= f.submit 'Upvote', class: 'upvote-submit' %>
+        <%= f.submit '+1', class: 'button upvote-submit' %>
       <% end %>
       <% if @messages %>
         <% @messages.each do |m| %>

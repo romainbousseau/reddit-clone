@@ -15,6 +15,10 @@
     </div>
     <div class="subject-body">
       <p><%= @subject.content %></p>
+      <%= simple_form_for @subject.upvotes.build, remote: true do |f| %>
+        <%= f.hidden_field :user, value: current_user %>
+        <%= f.submit 'Upvote', class: 'upvote-submit' %>
+      <% end %>
       <% if @messages %>
         <% @messages.each do |m| %>
           <div class="message">

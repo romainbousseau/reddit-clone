@@ -13,7 +13,6 @@ class SubjectsController < ApplicationController
   def show
     @message = Message.new
     @messages = Message.where(subject_id: @subject)
-    # @upvote = Upvote.new
   end
 
   def create

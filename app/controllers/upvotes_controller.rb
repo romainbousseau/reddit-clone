@@ -14,6 +14,6 @@ class UpvotesController < ApplicationController
 
   private
   def upvote_params
-    params.require(:upvote).permit(:user)
+    params.require(:upvote).permit(:user_id)
   end
 end

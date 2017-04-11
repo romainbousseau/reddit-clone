@@ -2,7 +2,8 @@
   <div class="subject-show">
     <div class="subject-header">
       <div class="subject-title">
-        <h4><%= @subject.title %></h4>
+        <h4 style="display: inline-block;"><%= @subject.title %></h4>
+        <p style="display: inline-block;">Votes: <%= @subject.score %></p>
         <% if user_signed_in? && @subject.user_id == current_user.id %>
           <%= link_to edit_subject_path(@subject) do %>
             <i class="fa fa-pencil"></i>
@@ -15,7 +16,7 @@
     </div>
     <div class="subject-body">
       <p><%= @subject.content %></p>
-      <%= simple_form_for @subject.upvotes.build, remote: true do |f| %>
+      <%= simple_form_for @subject.upvotes.build, url: subject_upvotes_path(@subject), remote: true do |f| %>
         <%= f.hidden_field :user, value: current_user %>
         <%= f.submit 'Upvote', class: 'upvote-submit' %>
       <% end %>

@@ -9,9 +9,16 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.user = current_user
     @message.subject = @subject
-    @message.save
     if @message.save
-      redirect_to subject_path(@subject)
+      respond_to do |format|
+        format.html { redirect_to subject_path(@subject) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'subject/show' }
+        format.js
+      end
     end
   end
 

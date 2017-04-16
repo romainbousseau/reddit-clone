@@ -20,24 +20,13 @@
         <%= f.hidden_field :user_id, value: current_user.id %>
         <%= f.submit '+1', class: 'button upvote-submit' %>
       <% end %>
-      <% if @messages %>
-        <% @messages.each do |m| %>
-          <div class="message">
-            <p><%= m.content %></p>
-            <div class="message-autor">
-              <p style="display: inline-block;"><%= m.user.username %></p>
-              <% if m.user_id == current_user.id %>
-                <%= link_to edit_subject_message_path(@subject,m) do %>
-                  <i style="display: inline-block;" class="fa fa-pencil"></i>
-                <% end %>
-                <%= link_to subject_message_path(@subject, m), method: :delete do %>
-                  <i style="display: inline-block;" class="fa fa-trash"></i>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
+      <div id="messages">
+        <% if @messages %>
+          <% @messages.each do |message| %>
+            <%= render 'messages/show', subject: @subject, message: message %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
   <div class="add-message">

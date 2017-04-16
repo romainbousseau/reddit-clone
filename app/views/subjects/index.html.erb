@@ -10,7 +10,7 @@
               <div class="subject-title">
                 <%= link_to subject_path(subject) do %>
                   <h4><%= subject.title %></h4>
-                <% end %>
+                <% end %><p style="display: inline-block;">Votes: <%= subject.score %></p>
                 <% if user_signed_in? && subject.user_id == current_user.id %>
                   <%= link_to edit_subject_path(subject) do %>
                     <i class="fa fa-pencil"></i>

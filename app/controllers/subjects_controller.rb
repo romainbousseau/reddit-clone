@@ -7,7 +7,7 @@ class SubjectsController < ApplicationController
   end
 
   def index
-    @subjects = Subject.all
+    @subjects = Subject.all.sort {|a,b| b.score <=> a.score}
   end
 
   def show

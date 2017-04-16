@@ -34,8 +34,17 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message.destroy
-    redirect_to subject_path(@subject)
+    if @message.destroy
+      respond_to do |format|
+        format.js
+        format.html { redirect_to subject_path(@subject) }
+      end
+    else
+      respond_to do |format|
+        format.js
+        format.html { render 'subject/show' }
+      end
+    end
   end
 
   private

@@ -23,7 +23,9 @@
       <div id="messages">
         <% if @messages %>
           <% @messages.each do |message| %>
-            <%= render 'messages/show', subject: @subject, message: message %>
+            <div id="message_<%= message.id %>">
+              <%= render 'messages/show', subject: @subject, message: message %>
+            </div>
           <% end %>
         <% end %>
       </div>

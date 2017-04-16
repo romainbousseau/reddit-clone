@@ -11,13 +11,13 @@ class MessagesController < ApplicationController
     @message.subject = @subject
     if @message.save
       respond_to do |format|
-        format.html { redirect_to subject_path(@subject) }
         format.js
+        format.html { redirect_to subject_path(@subject) }
       end
     else
       respond_to do |format|
-        format.html { render 'subject/show' }
         format.js
+        format.html { render 'subject/show' }
       end
     end
   end

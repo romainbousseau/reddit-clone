@@ -1,6 +1,8 @@
-<%= simple_form_for [@subject, @message], remote: true do |f| %>
-  <%= f.error_notification %>
+<div id="new_message">
+  <%= simple_form_for [@subject, @message], remote: true do |f| %>
+    <%= f.error_notification %>
 
-  <%= f.input :content, label: 'Content', as: :text %>
-  <%= f.button :submit %>
-<% end %>
+    <%= f.input :content, label: 'Content', as: :text %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

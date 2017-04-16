@@ -8,6 +8,4 @@
   $('#messages').append(new_message);
   // Show the new message with an animation!
   new_message.slideDown();
-  // Reset the form
-  $('#new_message').html("<%= j render 'messages/new', subject: @subject, message: Message.new %>");
 <% end %>

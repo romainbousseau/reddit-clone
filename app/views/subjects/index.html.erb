@@ -15,6 +15,9 @@
                   <%= link_to edit_subject_path(subject) do %>
                     <i class="fa fa-pencil"></i>
                   <% end %>
+                  <%= link_to subject_path(subject), method: :delete do %>
+                    <i class="fa fa-trash"></i>
+                  <% end %>
                 <% end %>
               </div>
               <div class="subject-author">

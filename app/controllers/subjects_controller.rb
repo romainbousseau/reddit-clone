@@ -1,5 +1,5 @@
 class SubjectsController < ApplicationController
-  before_action :set_subject, only: [:show, :update, :edit]
+  before_action :set_subject, only: [:show, :update, :edit, :destroy]
   skip_before_action :authenticate_user!, only: :index
 
   def new
@@ -30,6 +30,11 @@ class SubjectsController < ApplicationController
 
   def update
     @subject.update(subject_params)
+    redirect_to subjects_path
+  end
+
+  def destroy
+    @subject.destroy
     redirect_to subjects_path
   end
 

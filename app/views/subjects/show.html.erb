@@ -15,11 +15,15 @@
       </div>
     </div>
     <div class="subject-body">
-      <p><%= @subject.content %></p>
-      <%= simple_form_for @subject.upvotes.build, url: subject_upvotes_path(@subject), remote: true do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.submit '+1', class: 'button upvote-submit' %>
-      <% end %>
+      <div class="subject-content">
+        <p><%= @subject.content %></p>
+      </div>
+      <div class="subject-vote">
+        <%= simple_form_for @subject.upvotes.build, url: subject_upvotes_path(@subject), remote: true do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit '+1', class: 'button upvote-submit' %>
+        <% end %>
+      </div>
       <div id="messages">
         <% if @messages %>
           <% @messages.each do |message| %>
